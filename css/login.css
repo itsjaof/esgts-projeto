@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+    width: 330px;
+    background: #ddd;
+    padding: 35px 25px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.container h3 {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.container p {
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+label {
+    font-size: 12px;
+    color: #222;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 7px;
+    border: 1px solid rgb(191, 191, 191);
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+input:focus {
+    border: 1px solid #1c4dff;
+}
+
+button {
+    width: 100%;
+    padding: 9px;
+    border: none;
+    border-radius: 7px;
+    background: #1c4dff;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 5px;
+    border: 1px solid rgb(191, 191, 191);
+    transition: 0.15s;
+}
+
+button:hover {
+    filter: brightness(1.05);
+}
+
+button i {
+    margin-right: 6px;
+}
+
+.google-btn {
+    display: flex;
+    background: white;
+    color: black;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    font-weight: 600;
+    border: 1px solid #c4c4c4;
+    margin-top: 8px;
+}
+
+.google-icon {
+    display: flex;
+    align-items: center;
+}
