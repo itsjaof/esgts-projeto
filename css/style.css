@@ -1,5 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    /* Cores Primárias */
+    --color-primary: #8b5cf6;
+    --color-primary-dark: #7c3aed;
+    --color-primary-light: #a78bfa;
+    
+    /* Cores Secundárias */
+    --color-secondary: #f1ecf7;
+    --color-secondary-dark: #d1c8e6;
+    --color-secondary-light: #faf5ff;
+    
+    /* Cores de Fundo */
+    --color-background: #ffffff;
+    --color-background-alt: #f9fafb;
+    --color-sidebar: #f1ecf7;
+    
+    /* Cores de Texto */
+    --color-text-primary: #1f2937;
+    --color-text-secondary: #6b7280;
+    --color-text-light: #9ca3af;
+    
+    /* Cores de Borda */
+    --color-border: #cfcad9;
+    --color-border-light: #e5e7eb;
+    
+    /* Cores de Hover */
+    --color-hover: #ddd7e8;
+    --color-hover-dark: #c4b5fd;
+    
+    /* Cores de Card */
+    --color-card: #ffffff;
+    --color-card-hover: #f9fafb;
+    
+    /* Cores de Status */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tema Escuro */
+[data-theme="dark"] {
+    /* Cores Primárias (mantém-se igual) */
+    --color-primary: #a78bfa;
+    --color-primary-dark: #8b5cf6;
+    --color-primary-light: #c4b5fd;
+    
+    /* Cores Secundárias */
+    --color-secondary: #2d1b3d;
+    --color-secondary-dark: #3d2a4d;
+    --color-secondary-light: #1a0f26;
+    
+    /* Cores de Fundo */
+    --color-background: #1a1a1a;
+    --color-background-alt: #0f0f0f;
+    --color-sidebar: #1e1e2e;
+    
+    /* Cores de Texto */
+    --color-text-primary: #f3f4f6;
+    --color-text-secondary: #d1d5db;
+    --color-text-light: #9ca3af;
+    
+    /* Cores de Borda */
+    --color-border: #374151;
+    --color-border-light: #4b5563;
+    
+    /* Cores de Hover */
+    --color-hover: #2d1b3d;
+    --color-hover-dark: #4c2d5d;
+    
+    /* Cores de Card */
+    --color-card: #1e1e2e;
+    --color-card-hover: #252536;
+    
+    /* Cores de Status (mais suaves no escuro) */
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+    --color-error: #f87171;
+    --color-info: #60a5fa;
+    
+    /* Sombras (mais escuras) */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
 * {
     font-family: "Roboto", sans-serif;
+}
+
+/* Transições suaves para mudança de tema */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    transition: background-color 0.3s ease;
+}
+
+.sidebar,
+.main-content,
+.stat-card,
+.map-section,
+.activity-section,
+.activity-item {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-item,
+.logo,
+.content-header h1,
+.content-header .subtitle,
+.stat-info h3,
+.stat-value,
+.map-section h2,
+.activity-section h2,
+.activity-name,
+.activity-role,
+.activity-time {
+    transition: color 0.3s ease;
 }
