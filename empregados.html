@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PointSystem | Empregados</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/empregados-page.css">
+
+    <script src="https://kit.fontawesome.com/8a3dad9eb0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-clock"></i> PointSystem
+        </div>
+    
+        <nav>
+            <a class="nav-item" href="dashboard.html">
+                <i class="fas fa-home"></i> Dashboard
+            </a>
+            <a class="nav-item" href="registar-picagem.html">
+                <i class="fas fa-fingerprint"></i> Registar Picagem
+            </a>
+            <a class="nav-item active">
+                <i class="fas fa-users"></i> Empregados
+            </a>
+            <a class="nav-item" href="picagens.html">
+                <i class="fas fa-list-alt"></i> Picagens
+            </a>
+        </nav>
+    
+        <div class="bottom-menu">
+            <a class="nav-item" id="theme-toggle">
+                <i class="fas fa-palette"></i> <span class="theme-text">Tema</span>
+            </a>
+            <a class="nav-item">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="content-header">
+            <h1>Gestão de Colaboradores</h1>
+            <p class="subtitle">Gerir as informações dos colaboradores.</p>
+        </div>
+
+        <div class="action-bar">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Pesquisar Colaborador...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button class="btn-primary" id="open-modal-btn">
+                <i class="fas fa-plus"></i> Adicionar Colaborador
+            </button>
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Cargo</th>
+                        <th>ID Interno</th>
+                        <th>Estado</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome no Empregado</td>
+                        <td>empregado@empresa.pt</td>
+                        <td>Cargo</td>
+                        <td>ID Empregado</td>
+                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td class="actions-cell">
+                            <button class="action-btn" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn action-btn-danger" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Adicionar Empregado -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Adicionar Novo Empregado</h2>
+                <button class="modal-close" id="close-modal-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="modal-form" id="add-employee-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome-completo">Nome Completo<span class="required">*</span></label>
+                        <input type="text" id="nome-completo" name="nome-completo" placeholder="Nome Completo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email<span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cargo">Cargo<span class="required">*</span></label>
+                        <select id="cargo" name="cargo" required>
+                            <option value="">Selecione o Cargo</option>
+                            <option value="gerente">Gerente</option>
+                            <option value="supervisor">Supervisor</option>
+                            <option value="operador">Operador</option>
+                            <option value="auxiliar">Auxiliar</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id-interno">ID Interno</label>
+                        <input type="text" id="id-interno" name="id-interno" placeholder="0001" value="0001">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="localizacao">Localização<span class="required">*</span></label>
+                        <select id="localizacao" name="localizacao" required>
+                            <option value="">Definir Localização</option>
+                            <option value="escritorio-central">Escritório Central</option>
+                            <option value="armazem-1">Armazém 1</option>
+                            <option value="armazem-2">Armazém 2</option>
+                            <option value="loja-1">Loja 1</option>
+                            <option value="loja-2">Loja 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-status">
+                    <label>Estado do Empregado</label>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="status-toggle" class="toggle-input">
+                        <label for="status-toggle" class="toggle-label">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="status-text" id="status-text">Empregado inativo</span>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" id="cancel-btn">Cancelar</button>
+                    <button type="submit" class="btn-submit">Adicionar Empregado</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sistema de Tema
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeText = themeToggle.querySelector('.theme-text');
+        const html = document.documentElement;
+
+        // Verificar tema salvo ou preferência do sistema
+        function getInitialTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            // Verificar preferência do sistema
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark';
+            }
+            return 'light';
+        }
+
+        // Aplicar tema
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateThemeIcon(theme);
+        }
+
+        // Atualizar ícone do tema
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+                themeText.textContent = 'Tema Claro';
+            } else {
+                icon.className = 'fas fa-moon';
+                themeText.textContent = 'Tema Escuro';
+            }
+        }
+
+        // Inicializar tema
+        const currentTheme = getInitialTheme();
+        setTheme(currentTheme);
+
+        // Alternar tema ao clicar
+        themeToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        // Ouvir mudanças na preferência do sistema (opcional)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // Sistema de Modal
+        const modalOverlay = document.getElementById('modal-overlay');
+        const openModalBtn = document.getElementById('open-modal-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const cancelBtn = document.getElementById('cancel-btn');
+        const statusToggle = document.getElementById('status-toggle');
+        const statusText = document.getElementById('status-text');
+        const addEmployeeForm = document.getElementById('add-employee-form');
+
+        // Abrir modal
+        openModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Fechar modal
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            addEmployeeForm.reset();
+            statusToggle.checked = false;
+            updateStatusText();
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+
+        // Fechar ao clicar no overlay
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Fechar com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Toggle de status
+        function updateStatusText() {
+            if (statusToggle.checked) {
+                statusText.textContent = 'Empregado ativo';
+            } else {
+                statusText.textContent = 'Empregado inativo';
+            }
+        }
+
+        statusToggle.addEventListener('change', updateStatusText);
+
+        // Submeter formulário
+        addEmployeeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Aqui pode adicionar a lógica para adicionar o empregado
+            const formData = new FormData(addEmployeeForm);
+            const employeeData = {
+                nome: formData.get('nome-completo'),
+                email: formData.get('email'),
+                cargo: formData.get('cargo'),
+                idInterno: formData.get('id-interno'),
+                localizacao: formData.get('localizacao'),
+                ativo: statusToggle.checked
+            };
+            
+            console.log('Dados do empregado:', employeeData);
+            
+            // Fechar modal após submissão
+            closeModal();
+            
+            // Aqui pode adicionar uma notificação de sucesso
+            alert('Empregado adicionado com sucesso!');
+        });
+    </script>
+</body>
+</html>
+
