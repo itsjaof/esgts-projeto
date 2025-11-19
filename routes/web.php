@@ -17,3 +17,7 @@ Route::get('/', function () {
 Route::get('/picagens', function(){
     return view('picagens');
 })->name('picagens');
+
+Route::get('/registo', function(){
+    return view('resgistar-picagem');
+})->name('registo');

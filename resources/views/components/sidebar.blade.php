@@ -7,7 +7,7 @@
         <a class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
             <i class="fas fa-home"></i> Dashboard
         </a>
-        <a class="nav-item" href="">
+        <a class="nav-item {{ request()->routeIs('registo') ? 'active' : '' }}" href="{{ route('registo') }}">
             <i class="fas fa-fingerprint"></i> Registar Picagem
         </a>
         <a class="nav-item {{ request()->routeIs('empregados') ? 'active' : '' }}" href="{{ route('empregados') }}">
