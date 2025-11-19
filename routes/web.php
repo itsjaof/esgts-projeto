@@ -13,3 +13,7 @@ Route::get('/empregados', function () {
 Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/picagens', function(){
+    return view('picagens');
+})->name('picagens');

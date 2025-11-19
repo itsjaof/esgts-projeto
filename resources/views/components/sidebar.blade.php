@@ -13,7 +13,7 @@
         <a class="nav-item {{ request()->routeIs('empregados') ? 'active' : '' }}" href="{{ route('empregados') }}">
             <i class="fas fa-users"></i> Empregados
         </a>
-        <a class="nav-item" href="">
+        <a class="nav-item {{ request()->routeIs('picagens') ? 'active' : '' }}" href="{{ route('picagens') }}">
             <i class="fas fa-list-alt"></i> Picagens
         </a>
     </nav>
