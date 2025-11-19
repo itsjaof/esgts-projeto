@@ -1,4 +1,4 @@
-@extends('layouts.app', ['Sidebar' => true])
+@extends('layouts.app', ['Sidebar' => false])
 
 @section('title','PointSystem - Login')
 

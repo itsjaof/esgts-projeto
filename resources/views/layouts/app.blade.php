@@ -9,11 +9,12 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="{{ isset($Sidebar) ? 'no-sidebar' : '' }}">
 
     @if (!isset($Sidebar))
         @include('components.sidebar')
     @endif
+
 
     @yield('content')
 
