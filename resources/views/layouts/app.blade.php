@@ -11,6 +11,10 @@
 </head>
 <body>
 
+    @if (!isset($Sidebar))
+        @include('components.sidebar')
+    @endif
+
     @yield('content')
 
 </body>

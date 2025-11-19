@@ -1,36 +1,8 @@
 @extends('layouts.app')
 
+@section('title','PointSystem - Empregados')
+
 @section('content')
-
-<div class="sidebar">
-        <div class="logo">
-            <i class="fas fa-clock"></i> PointSystem
-        </div>
-
-        <nav>
-            <a class="nav-item" href="dashboard.html">
-                <i class="fas fa-home"></i> Dashboard
-            </a>
-            <a class="nav-item" href="registar-picagem.html">
-                <i class="fas fa-fingerprint"></i> Registar Picagem
-            </a>
-            <a class="nav-item active">
-                <i class="fas fa-users"></i> Empregados
-            </a>
-            <a class="nav-item" href="picagens.html">
-                <i class="fas fa-list-alt"></i> Picagens
-            </a>
-        </nav>
-
-        <div class="bottom-menu">
-            <a class="nav-item" id="theme-toggle">
-                <i class="fas fa-palette"></i> <span class="theme-text">Tema</span>
-            </a>
-            <a class="nav-item">
-                <i class="fas fa-sign-out-alt"></i> Sair
-            </a>
-        </div>
-    </div>
 
     <div class="main-content">
         <div class="content-header">
@@ -277,7 +249,8 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nome-completo">Nome Completo<span class="required">*</span></label>
-                        <input type="text" id="nome-completo" name="nome-completo" placeholder="Nome Completo" required>
+                        <input type="text" id="nome-completo" name="nome-completo" placeholder="Nome Completo"
+                            required>
                     </div>
 
                     <div class="form-group">
@@ -336,5 +309,4 @@
             </form>
         </div>
     </div>
-
 @endsection
