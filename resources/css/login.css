@@ -140,6 +140,7 @@ button i {
     font-size: 14px;
     transition: background 0.2s, border-color 0.2s, transform 0.1s;
     font-family: "Roboto", sans-serif;
+    text-decoration: none;
 }
 
 .google-btn:hover {

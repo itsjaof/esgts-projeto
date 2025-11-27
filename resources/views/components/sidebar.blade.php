@@ -22,7 +22,7 @@
         <a class="nav-item" id="theme-toggle">
             <i class="fas fa-palette"></i> <span class="theme-text">Tema</span>
         </a>
-        <a class="nav-item">
+        <a class="nav-item" href="{{ route('logout') }}">
             <i class="fas fa-sign-out-alt"></i> Sair
         </a>
     </div>
