@@ -35,201 +35,27 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($users as $user)
                     <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->position }}</td>
+                        <td>EMP{{ $user->id }}</td>
+                        <td><span class="status-badge status-active">{{ $user->status }}</span></td>
                         <td class="actions-cell">
                             <button class="action-btn" title="Editar">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
+                            <button class="action-btn action-btn-danger" title="Eliminar" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $user->id }}').submit();">
+                                <form action="{{ route('delete-empregado', ['id' => $user->id]) }}" method="POST" id="delete-form-{{ $user->id }}" onsubmit="return confirm('Tem a certeza que deseja eliminar este empregado?')">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

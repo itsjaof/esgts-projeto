@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\CheckIsLogged;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,9 +18,8 @@ Route::get('/auth/google', [GoogleController::class, 'redirect'])->name('google.
 Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
 
 Route::middleware([CheckIsLogged::class])->group(function () {
-    Route::get('/empregados', function () {
-        return view('empregados');
-    })->name('empregados');
+    Route::get('/empregados', [UserController::class, 'index'])->name('empregados');
+    Route::delete('/empregados/{id}', [UserController::class, 'delete'])->name('delete-empregado');
 
     Route::get('/', function () {
         return view('dashboard');
