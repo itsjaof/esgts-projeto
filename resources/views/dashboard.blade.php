@@ -14,7 +14,7 @@
         <div class="stat-card">
             <div class="stat-info">
                 <h3>Total Empregados</h3>
-                <p class="stat-value">150</p>
+                <p class="stat-value">{{$num_users}}</p>
             </div>
             <div class="stat-icon">
                 <i class="fas fa-users"></i>
@@ -23,7 +23,7 @@
         <div class="stat-card">
             <div class="stat-info">
                 <h3>Empregados Ativos</h3>
-                <p class="stat-value">100</p>
+                <p class="stat-value">{{$num_ativos}}</p>
             </div>
             <div class="stat-icon">
                 <i class="fas fa-user-check"></i>
@@ -41,7 +41,7 @@
         <div class="stat-card">
             <div class="stat-info">
                 <h3>Em Pausa</h3>
-                <p class="stat-value">10</p>
+                <p class="stat-value">{{$num_pausas}}</p>
             </div>
             <div class="stat-icon">
                 <i class="fas fa-coffee"></i>
@@ -70,78 +70,32 @@
                 <i class="fas fa-history"></i> Atividade Recente
             </h2>
             <div class="activity-list">
-                <div class="activity-item">
-                    <div class="activity-avatar">
-                        <i class="fas fa-user"></i>
+                @foreach ($atividades as $atividade)
+                    <div class="activity-item">
+                        <div class="activity-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="activity-info">
+                            <span class="activity-name">{{$atividade->nome_user}}</span>
+                            <span class="activity-role">{{$atividade->cargo}}</span>
+                        </div>
+                        @if ($atividade->tipo == 'entrada')
+                            <span class="activity-time" style="color: rgb(0, 253, 0)">
+                                <i class="fas fa-clock"></i> {{$atividade->recorded_at}}
+                            </span>
+                        @elseif (str_contains($atividade->tipo, 'pausa'))
+                            <span class="activity-time" style="color: rgb(250, 250, 4)">
+                            <i class="fas fa-clock"></i> {{$atividade->recorded_at}}
+                            </span>
+                        @elseif ($atividade->tipo == 'saida')
+                            <span class="activity-time" style="color: red">
+                            <i class="fas fa-clock"></i> {{$atividade->recorded_at}}
+                            </span>
+                        @endif
                     </div>
-                    <div class="activity-info">
-                        <span class="activity-name">Nome</span>
-                        <span class="activity-role">Cargo</span>
-                    </div>
-                    <span class="activity-time">
-                        <i class="fas fa-clock"></i> Hora
-                    </span>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="activity-info">
-                        <span class="activity-name">Nome</span>
-                        <span class="activity-role">Cargo</span>
-                    </div>
-                    <span class="activity-time">
-                        <i class="fas fa-clock"></i> Hora
-                    </span>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="activity-info">
-                        <span class="activity-name">Nome</span>
-                        <span class="activity-role">Cargo</span>
-                    </div>
-                    <span class="activity-time">
-                        <i class="fas fa-clock"></i> Hora
-                    </span>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="activity-info">
-                        <span class="activity-name">Nome</span>
-                        <span class="activity-role">Cargo</span>
-                    </div>
-                    <span class="activity-time">
-                        <i class="fas fa-clock"></i> Hora
-                    </span>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="activity-info">
-                        <span class="activity-name">Nome</span>
-                        <span class="activity-role">Cargo</span>
-                    </div>
-                    <span class="activity-time">
-                        <i class="fas fa-clock"></i> Hora
-                    </span>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="activity-info">
-                        <span class="activity-name">Nome</span>
-                        <span class="activity-role">Cargo</span>
-                    </div>
-                    <span class="activity-time">
-                        <i class="fas fa-clock"></i> Hora
-                    </span>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </div>

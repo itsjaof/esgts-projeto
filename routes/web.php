@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\CheckIsLogged;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,9 +22,7 @@ Route::middleware([CheckIsLogged::class])->group(function () {
         return view('empregados');
     })->name('empregados');
 
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/picagens', function () {
         return view('picagens');
