@@ -10,21 +10,14 @@ class HomeController extends Controller
 {
     public function dashboard(){
 
-        //Total Empregados
-        $users = Users::all();
-        $num_users = count($users);
+        //Elements for the first grid on dashboard
+        $elements = Users::dashboardElements();
+        //dd($elements);
 
-        //Empregados Ativos
-        $ativos = Users::where('status', 'ativo')->get();
-        $num_ativos = count($ativos);
-
-        //Empregados em Pausa
-        $num_pausas = Users::num_pausas();
-
-        $atividades = Users::atividade_recente();
-
+        //Array with the data for the grid at recently activities
+        $activities = Users::recentlyActivities();
         //dd($atividades);
 
-        return view('dashboard', compact('users', 'num_users', 'num_ativos', 'num_pausas', 'atividades'));
+        return view('dashboard', compact('elements', 'activities'));
     }
 }
