@@ -35,201 +35,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nome no Empregado</td>
-                        <td>empregado@empresa.pt</td>
-                        <td>Cargo</td>
-                        <td>ID Empregado</td>
-                        <td><span class="status-badge status-active">Ativo</span></td>
-                        <td class="actions-cell">
-                            <button class="action-btn" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-btn action-btn-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                    @foreach($users as $user)
+                        <tr>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->position }}</td>
+                            <td>EMP{{ $user->id }}</td>
+                            @if($user->status == 'Ativo')
+                                <td><span class="status-badge status-active">Ativo</span></td>
+                            @else
+                                <td><span class="status-badge status-inactive">Inativo</span></td>
+                            @endif
+                            <td class="actions-cell">
+                                <button class="action-btn edit-user-btn" title="Editar"
+                                    data-user-id="{{ $user->id }}"
+                                    data-user-name="{{ $user->name }}"
+                                    data-user-email="{{ $user->email }}"
+                                    data-user-position="{{ $user->position }}"
+                                    data-user-status="{{ $user->status }}">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <form action="{{ route('empregados.destroy', $user->id) }}" method="POST" class="inline-form">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="action-btn action-btn-danger" title="Eliminar" onclick="return confirm('Tem a certeza que deseja eliminar este utilizador?')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -245,12 +80,13 @@
                 </button>
             </div>
 
-            <form class="modal-form" id="add-employee-form">
+            <form class="modal-form" id="add-employee-form" method="POST">
+                @csrf
+                @method('POST')
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nome-completo">Nome Completo<span class="required">*</span></label>
-                        <input type="text" id="nome-completo" name="nome-completo" placeholder="Nome Completo"
-                            required>
+                        <input type="text" id="nome-completo" name="nome-completo" placeholder="Nome Completo" required>
                     </div>
 
                     <div class="form-group">
@@ -264,34 +100,23 @@
                         <label for="cargo">Cargo<span class="required">*</span></label>
                         <select id="cargo" name="cargo" required>
                             <option value="">Selecione o Cargo</option>
-                            <option value="gerente">Gerente</option>
-                            <option value="supervisor">Supervisor</option>
-                            <option value="operador">Operador</option>
-                            <option value="auxiliar">Auxiliar</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Supervisor">Supervisor</option>
+                            <option value="Operador">Operador</option>
+                            <option value="Auxiliar">Auxiliar</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="id-interno">ID Interno</label>
-                        <input type="text" id="id-interno" name="id-interno" placeholder="0001" value="0001">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="localizacao">Localização<span class="required">*</span></label>
-                        <select id="localizacao" name="localizacao" required>
-                            <option value="">Definir Localização</option>
-                            <option value="escritorio-central">Escritório Central</option>
-                            <option value="armazem-1">Armazém 1</option>
-                            <option value="armazem-2">Armazém 2</option>
-                            <option value="loja-1">Loja 1</option>
-                            <option value="loja-2">Loja 2</option>
+                    <label for="type">Tipo de Utilizador<span class="required">*</span></label>
+                        <select id="type" name="type" required>
+                        <option value="employee">Empregado</option>
+                            <option value="admin">Administrador</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="form-status">
+                <div class="form-group">
                     <label>Estado do Empregado</label>
                     <div class="toggle-container">
                         <input type="checkbox" id="status-toggle" class="toggle-input">
@@ -303,8 +128,73 @@
                 </div>
 
                 <div class="modal-actions">
-                    <button type="button" class="btn-cancel" id="cancel-btn">Cancelar</button>
                     <button type="submit" class="btn-submit">Adicionar Empregado</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Editar Empregado -->
+    <div class="modal-overlay" id="edit-modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Editar Empregado</h2>
+                <button class="modal-close" id="close-edit-modal-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form class="modal-form" id="edit-employee-form" method="POST">
+                @csrf
+                @method('PUT')
+                <input type="hidden" id="edit-user-id" name="user_id">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-nome-completo">Nome Completo<span class="required">*</span></label>
+                        <input type="text" id="edit-nome-completo" name="nome-completo" placeholder="Nome Completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-email">Email<span class="required">*</span></label>
+                        <input type="email" id="edit-email" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                <div class="form-group">
+                        <label for="cargo">Cargo<span class="required">*</span></label>
+                        <select id="cargo" name="cargo" required>
+                            <option value="">Selecione o Cargo</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Supervisor">Supervisor</option>
+                            <option value="Operador">Operador</option>
+                            <option value="Auxiliar">Auxiliar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="type">Tipo de Utilizador<span class="required">*</span></label>
+                        <select id="type" name="type" required>
+                        <option value="employee">Empregado</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-status">
+                    <label>Estado do Empregado</label>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="edit-status-toggle" class="toggle-input">
+                        <label for="edit-status-toggle" class="toggle-label">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="status-text" id="edit-status-text">Empregado inativo</span>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-submit">Guardar Alterações</button>
                 </div>
             </form>
         </div>
