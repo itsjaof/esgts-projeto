@@ -87,6 +87,7 @@ class UserController extends Controller
 
         $user->name = $request->input('nome-completo');
         $user->email = $request->input('email');
+        $user->role = $request->input('type');
         $user->position = $request->input('cargo');
         $user->status = $request->input('status', 'Inativo');
         $user->save();

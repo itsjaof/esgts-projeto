@@ -177,10 +177,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const editCargo = document.getElementById('edit-cargo');
         const editIdInterno = document.getElementById('edit-id-interno');
 
+        document.getElementById("admin-option").setAttribute("hidden", "");
         if (editUserId) editUserId.value = userId || '';
         if (editNomeCompleto) editNomeCompleto.value = userName || '';
         if (editEmail) editEmail.value = userEmail || '';
-        if (editCargo) editCargo.value = userPosition ? userPosition.toLowerCase() : '';
+        if (editCargo) editCargo.value = userPosition ? userPosition.charAt(0).toUpperCase() + userPosition.slice(1) : '';
         if (editIdInterno) editIdInterno.value = `EMP${userId}`;
 
         // Definir o status

@@ -35,29 +35,139 @@
     font-size: 18px;
 }
 
-.calendar-placeholder {
-    height: 500px;
+/* ----- Calendar Styles ----- */
+.calendar-container {
     background: var(--color-background-alt);
     border-radius: 8px;
     border: 1px solid var(--color-border-light);
+    padding: 16px;
+}
+
+.calendar-header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.calendar-nav-btn {
+    background: transparent;
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    transition: all 0.2s;
+    display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-light);
-    gap: 16px;
+    width: 36px;
+    height: 36px;
 }
 
-.calendar-placeholder i {
-    font-size: 64px;
-    opacity: 0.5;
+.calendar-nav-btn:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
-.calendar-placeholder p {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
+.calendar-nav-btn:active {
+    transform: scale(0.95);
+}
+
+.calendar-month-year {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-transform: capitalize;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.calendar-weekday {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
     color: var(--color-text-secondary);
+    padding: 8px 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--color-text-primary);
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.calendar-day:not(.other-month):hover {
+    background: var(--color-secondary);
+    border-color: var(--color-border);
+}
+
+.calendar-day.other-month {
+    color: var(--color-text-light);
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+    background: transparent;
+    border-color: transparent;
+}
+
+.calendar-day.today {
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    border-color: var(--color-primary);
+}
+
+.calendar-day.selected {
+    background: var(--color-primary-dark);
+    color: white;
+    font-weight: 600;
+    border-color: var(--color-primary-dark);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+}
+
+.calendar-day.has-picagens {
+    position: relative;
+}
+
+.calendar-day.has-picagens::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--color-success);
+    border-radius: 50%;
+}
+
+.calendar-day.selected.has-picagens::after {
+    background: white;
 }
 
 .picagens-list {
@@ -126,8 +236,35 @@
     white-space: nowrap;
 }
 
+.picagem-status.status-complete {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-success);
+}
+
+.picagem-status.status-pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--color-warning);
+}
+
+.picagem-status.status-late {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--color-error);
+}
+
 [data-theme="dark"] .picagem-status {
     background: rgba(52, 211, 153, 0.2);
+}
+
+[data-theme="dark"] .picagem-status.status-complete {
+    background: rgba(52, 211, 153, 0.2);
+}
+
+[data-theme="dark"] .picagem-status.status-pending {
+    background: rgba(251, 191, 36, 0.2);
+}
+
+[data-theme="dark"] .picagem-status.status-late {
+    background: rgba(248, 113, 113, 0.2);
 }
 
 /* Responsividade Picagens */
@@ -136,8 +273,8 @@
         grid-template-columns: 1fr;
     }
 
-    .calendar-placeholder {
-        height: 300px;
+    .calendar-container {
+        margin-bottom: 24px;
     }
 }
 

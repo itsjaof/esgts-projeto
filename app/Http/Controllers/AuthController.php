@@ -11,6 +11,10 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function calendar() {
+        return view('calendar');
+    }
+
     public function submit(Request $request) {
 
         //form validations

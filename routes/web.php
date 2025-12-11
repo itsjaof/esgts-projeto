@@ -5,6 +5,7 @@ use App\Http\Middleware\CheckIsLogged;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PicagensController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,6 +15,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/submit', [AuthController::class, 'submit'])->name('submit');
+Route::get('/calendar', [AuthController::class, 'calendar'])->name('calendar');
 
 Route::get('/auth/google', [GoogleController::class, 'redirect'])->name('google.redirect');
 Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
@@ -26,9 +28,8 @@ Route::middleware([CheckIsLogged::class])->group(function () {
 
     Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/picagens', function () {
-        return view('picagens');
-    })->name('picagens');
+    Route::get('/picagens', [PicagensController::class, 'index'])->name('picagens');
+    Route::get('/picagens/data', [PicagensController::class, 'data'])->name('picagens.data');
 
     Route::get('/registo', function () {
         return view('resgistar-picagem');
