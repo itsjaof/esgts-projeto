@@ -307,3 +307,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Modal para forçar alteração de password (abre automaticamente se existir)
+document.addEventListener('DOMContentLoaded', () => {
+    const forcePasswordModal = document.getElementById('forcePasswordResetModal');
+    if (forcePasswordModal) {
+        forcePasswordModal.classList.add('active');
+    }
+});

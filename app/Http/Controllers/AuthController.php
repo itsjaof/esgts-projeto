@@ -68,12 +68,43 @@ class AuthController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'role' => $user->role
-            ]
+            ],
+            'force_password_reset' => password_verify('abc123456', $user->password),
         ]);
 
         //redirect to page
         return redirect()->route('dashboard');
 
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $sessionUser = session('user');
+
+        if (!$sessionUser) {
+            return redirect()->route('login');
+        }
+
+        $request->validate([
+            'password' => ['required', 'min:8', 'confirmed'],
+        ], [
+            'password.required' => 'A nova palavra-passe é obrigatória',
+            'password.min' => 'A nova palavra-passe deve ter pelo menos :min caracteres.',
+            'password.confirmed' => 'A confirmação não coincide.',
+        ]);
+
+        $user = Users::find($sessionUser['id']);
+
+        if (!$user) {
+            return redirect()->route('login');
+        }
+
+        $user->password = bcrypt($request->input('password'));
+        $user->save();
+
+        session()->forget('force_password_reset');
+
+        return redirect()->back()->with('success', 'Palavra-passe alterada com sucesso.');
     }
 
     public function logout(){

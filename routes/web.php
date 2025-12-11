@@ -34,4 +34,6 @@ Route::middleware([CheckIsLogged::class])->group(function () {
     Route::get('/registo', function () {
         return view('resgistar-picagem');
     })->name('registo');
+
+    Route::post('/password/update', [AuthController::class, 'updatePassword'])->name('password.update');
 });
