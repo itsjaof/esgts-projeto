@@ -76,6 +76,6 @@ class Users extends Model
 
     public function timePunches()
     {
-        return $this->hasMany(Time_Punches::class);
+        return $this->hasMany(Time_Punches::class, 'user_id');
     }
 }
