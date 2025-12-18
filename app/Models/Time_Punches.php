@@ -12,6 +12,7 @@ class Time_Punches extends Model
 
     protected $casts = [
         'recorded_at' => 'datetime',
+        'raw_api_response' => 'array',
     ];
 
     protected $fillable = [

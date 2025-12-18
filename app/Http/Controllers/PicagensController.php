@@ -45,6 +45,9 @@ class PicagensController extends Controller
             'lat' => 'required|numeric',
             'lng' => 'required|numeric',
             'accuracy_m' => 'nullable|numeric',
+            'formatted_address' => 'nullable|string',
+            'google_place_id' => 'nullable|string|max:255',
+            'raw_api_response' => 'nullable|array',
         ]);
 
         $user = Users::find($sessionUser['id']);
@@ -94,6 +97,100 @@ class PicagensController extends Controller
                     'lng' => $punch->lng,
                 ];
             }),
+        ]);
+    }
+
+    public function currentStatus(Request $request)
+    {
+        $sessionUser = session('user');
+
+        if (!$sessionUser) {
+            return response()->json([
+                'message' => 'Não autenticado.',
+            ], 401);
+        }
+
+        $user = Users::find($sessionUser['id']);
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'Utilizador não encontrado.',
+            ], 404);
+        }
+
+        $today = now()->toDateString();
+        $todayPunches = $user->timePunches()
+            ->whereDate('recorded_at', $today)
+            ->orderBy('recorded_at')
+            ->get();
+
+        $entrada = $todayPunches->firstWhere('punch_type', 'entrada');
+        $saida = $todayPunches->last(function ($punch) {
+            return $punch->punch_type === 'saida';
+        });
+        $pausaInicio = $todayPunches->last(function ($punch) {
+            return $punch->punch_type === 'pausa_inicio';
+        });
+        $pausaFim = $todayPunches->last(function ($punch) {
+            return $punch->punch_type === 'pausa_fim';
+        });
+
+        // Determinar estado atual
+        $currentStatus = 'Sem registo';
+        if ($saida) {
+            $currentStatus = 'Saída';
+        } elseif ($pausaInicio && !$pausaFim) {
+            $currentStatus = 'Em pausa';
+        } elseif ($entrada && !$saida) {
+            $currentStatus = 'A trabalhar';
+        }
+
+        // Calcular horas trabalhadas
+        $totalMinutes = 0;
+        if ($entrada) {
+            $startTime = $entrada->recorded_at;
+
+            // Se está em pausa agora, calcular até o início da pausa
+            if ($pausaInicio && !$pausaFim) {
+                $endTime = $pausaInicio->recorded_at;
+            } else {
+                $endTime = $saida ? $saida->recorded_at : now();
+            }
+
+            // Calcular todas as pausas completas (que já terminaram)
+            $pauseMinutes = 0;
+            $pausasInicio = $todayPunches->where('punch_type', 'pausa_inicio');
+            $pausasFim = $todayPunches->where('punch_type', 'pausa_fim');
+
+            foreach ($pausasInicio as $pausaInicioItem) {
+                // Encontrar o fim de pausa correspondente (primeiro após o início)
+                $pausaFimItem = $pausasFim->first(function ($pausaFimItem) use ($pausaInicioItem) {
+                    return $pausaFimItem->recorded_at > $pausaInicioItem->recorded_at;
+                });
+
+                // Só contar pausas que já terminaram e que estão antes do endTime
+                if ($pausaFimItem && $pausaFimItem->recorded_at <= $endTime) {
+                    $pauseMinutes += $pausaInicioItem->recorded_at->diffInMinutes($pausaFimItem->recorded_at);
+                }
+            }
+
+            $totalMinutes = $startTime->diffInMinutes($endTime) - $pauseMinutes;
+
+            // Garantir que não seja negativo
+            $totalMinutes = max(0, $totalMinutes);
+        }
+
+        $hours = floor($totalMinutes / 60);
+        $minutes = $totalMinutes % 60;
+
+        return response()->json([
+            'current_status' => $currentStatus,
+            'hours_today' => $hours,
+            'minutes_today' => $minutes,
+            'entrada' => $entrada?->recorded_at?->format('H:i'),
+            'saida' => $saida?->recorded_at?->format('H:i'),
+            'pausa_inicio' => $pausaInicio?->recorded_at?->format('H:i'),
+            'pausa_fim' => $pausaFim?->recorded_at?->format('H:i'),
         ]);
     }
 
