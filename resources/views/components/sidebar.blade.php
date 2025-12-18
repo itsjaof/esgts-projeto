@@ -4,18 +4,24 @@
     </div>
 
     <nav>
-        <a class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
-            <i class="fas fa-home"></i> Dashboard
-        </a>
-        <a class="nav-item {{ request()->routeIs('registo') ? 'active' : '' }}" href="{{ route('registo') }}">
-            <i class="fas fa-fingerprint"></i> Registar Picagem
-        </a>
-        <a class="nav-item {{ request()->routeIs('empregados') ? 'active' : '' }}" href="{{ route('empregados') }}">
-            <i class="fas fa-users"></i> Empregados
-        </a>
-        <a class="nav-item {{ request()->routeIs('picagens') ? 'active' : '' }}" href="{{ route('picagens') }}">
-            <i class="fas fa-list-alt"></i> Picagens
-        </a>
+        @if ((session('user')['role'] == 'admin'))
+            <a class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                <i class="fas fa-home"></i> Dashboard
+            </a>
+            <a class="nav-item {{ request()->routeIs('registo') ? 'active' : '' }}" href="{{ route('registo') }}">
+                <i class="fas fa-fingerprint"></i> Registar Picagem
+            </a>
+            <a class="nav-item {{ request()->routeIs('empregados') ? 'active' : '' }}" href="{{ route('empregados') }}">
+                <i class="fas fa-users"></i> Empregados
+            </a>
+            <a class="nav-item {{ request()->routeIs('picagens') ? 'active' : '' }}" href="{{ route('picagens') }}">
+                <i class="fas fa-list-alt"></i> Picagens
+            </a>
+        @elseif ((session('user')['role'] == 'employee'))
+            <a class="nav-item {{ request()->routeIs('registo') ? 'active' : '' }}" href="{{ route('registo') }}">
+                <i class="fas fa-fingerprint"></i> Registar Picagem
+            </a>
+        @endif
     </nav>
 
     <div class="bottom-menu">

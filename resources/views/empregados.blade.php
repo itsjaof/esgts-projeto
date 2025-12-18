@@ -101,17 +101,7 @@
                         <select id="cargo" name="cargo" required>
                             <option value="">Selecione o Cargo</option>
                             <option value="Gerente">Gerente</option>
-                            <option value="Supervisor">Supervisor</option>
                             <option value="Operador">Operador</option>
-                            <option value="Auxiliar">Auxiliar</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="type">Tipo de Utilizador<span class="required">*</span></label>
-                        <select id="type" name="type" required>
-                        <option value="employee">Empregado</option>
-                            <option value="admin">Administrador</option>
                         </select>
                     </div>
                 </div>
@@ -162,25 +152,16 @@
                 </div>
 
                 <div class="form-row">
-                <div class="form-group">
+
                         <label for="edit-cargo">Cargo<span class="required">*</span></label>
                         <select id="edit-cargo" name="cargo" required>
                             <option value="">Selecione o Cargo</option>
                             <option value="Gerente">Gerente</option>
-                            <option value="Supervisor">Supervisor</option>
                             <option value="Operador">Operador</option>
-                            <option value="Auxiliar">Auxiliar</option>
                             <option id="admin-option" value="Administrador">Administrador</option>
                         </select>
-                    </div>
 
-                    <div class="form-group">
-                    <label for="type">Tipo de Utilizador<span class="required">*</span></label>
-                        <select id="type" name="type" required>
-                        <option value="employee">Empregado</option>
-                            <option value="admin">Administrador</option>
-                        </select>
-                    </div>
+
                 </div>
 
                 <div class="form-group">

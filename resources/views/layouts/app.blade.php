@@ -20,10 +20,8 @@
 
     @yield('content')
 
-    @include('components.force-password-modal')
 
-
-    <!--  script para API do Google Maps -->
+    <!--  script para API do Google Maps  -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIX4JNyhVQrRQQCnTMH0sL9zt3LEEGAf8&=initMap" async
         defer></script>
 </body>

@@ -20,7 +20,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * Poderia simplesmenter ter feito desta maneira:
+     * Poderia simplesmente ter feito desta maneira:
      * $user = Users::create([
      *       'name' => $request->input('nome-completo'),
      *       'email' => $request->input('email'),
@@ -41,7 +41,13 @@ class UserController extends Controller
         $user->name     = $request->input('nome-completo');
         $user->email    = $request->input('email');
         $user->position = $request->input('cargo');
-        $user->role     = $request->input('type');
+        if ($user->position == 'Administrador') {
+            $user->role = 'admin';
+        }elseif ($user->position == 'Gerente') {
+            $user->role = 'manager';
+        }elseif ($user->position == 'Operador') {
+            $user->role = 'employee';
+        }
         $user->status   = $request->input('status', 'Inativo');
         $user->password = bcrypt('abc123456');
 

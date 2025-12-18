@@ -11,10 +11,6 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function calendar() {
-        return view('calendar');
-    }
-
     public function submit(Request $request) {
 
         //form validations
@@ -73,7 +69,7 @@ class AuthController extends Controller
         ]);
 
         //redirect to page
-        return redirect()->route('dashboard');
+        return redirect()->route('registo');
 
     }
 
