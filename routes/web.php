@@ -28,8 +28,16 @@ Route::middleware([CheckIsLogged::class])->group(function () {
         })->name('registo');
     });
 
+<<<<<<< HEAD
     Route::middleware([CheckRoles::class . ':admin|manager'])->group(function () {
         Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard');
+=======
+    Route::get('/picagens', [PicagensController::class, 'index'])->name('picagens');
+    Route::get('/picagens/data', [PicagensController::class, 'data'])->name('picagens.data');
+    Route::get('/picagens/latest', [PicagensController::class, 'latest'])->name('picagens.latest');
+    Route::get('/picagens/current-status', [PicagensController::class, 'currentStatus'])->name('picagens.current-status');
+    Route::post('/picagens', [PicagensController::class, 'store'])->name('picagens.store');
+>>>>>>> 142e62362d1ca523405e53d58f86eb17837f8a6b
 
         Route::get('/picagens', [PicagensController::class, 'index'])->name('picagens');
         Route::get('/picagens/data', [PicagensController::class, 'data'])->name('picagens.data');
