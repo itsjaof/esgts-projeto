@@ -35,11 +35,15 @@ class Users extends Model
                                     SELECT COUNT(*)
                                     FROM time_punches t
                                     WHERE t.punch_type = 'pausa_inicio'
-                                    AND user_id NOT IN (
-                                        SELECT user_id
-                                        FROM time_punches
-                                        WHERE punch_type = 'pausa_fim'
+                                    AND DATE(t.recorded_at) = CURDATE()
+                                    AND NOT EXISTS (
+                                        SELECT 1
+                                        FROM time_punches t2
+                                        WHERE t2.user_id = t.user_id
+                                            AND t2.punch_type = 'pausa_fim'
+                                            AND DATE(t2.recorded_at) = CURDATE()
                                     )
+
                                 ) AS pauses
                             ");
     }

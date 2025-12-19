@@ -69,7 +69,7 @@ class AuthController extends Controller
         ]);
 
         //redirect to page
-        return redirect()->route('registo');
+        return redirect()->route('dashboard');
 
     }
 

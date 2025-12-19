@@ -22,25 +22,28 @@ Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name
 
 Route::middleware([CheckIsLogged::class])->group(function () {
 
-    Route::middleware([CheckRoles::class . ':employee'])->group(function () {
+    Route::middleware([CheckRoles::class . ':admin|manager|employee'])->group(function () {
         Route::get('/registo', function () {
             return view('resgistar-picagem');
         })->name('registo');
     });
+    Route::middleware([CheckRoles::class . ':admin|manager'])->group(function () {
+        Route::get('/', [HomeController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/picagens', [PicagensController::class, 'index'])->name('picagens');
-    Route::get('/picagens/data', [PicagensController::class, 'data'])->name('picagens.data');
-    Route::get('/picagens/latest', [PicagensController::class, 'latest'])->name('picagens.latest');
-    Route::get('/picagens/current-status', [PicagensController::class, 'currentStatus'])->name('picagens.current-status');
-    Route::post('/picagens', [PicagensController::class, 'store'])->name('picagens.store');
+        Route::get('/picagens', [PicagensController::class, 'index'])->name('picagens');
+        Route::get('/picagens/data', [PicagensController::class, 'data'])->name('picagens.data');
+        Route::get('/picagens/latest', [PicagensController::class, 'latest'])->name('picagens.latest');
+        Route::get('/picagens/current-status', [PicagensController::class, 'currentStatus'])->name('picagens.current-status');
+        Route::post('/picagens', [PicagensController::class, 'store'])->name('picagens.store');
 
-    Route::get('/picagens', [PicagensController::class, 'index'])->name('picagens');
-    Route::get('/picagens/data', [PicagensController::class, 'data'])->name('picagens.data');
+        Route::get('/picagens', [PicagensController::class, 'index'])->name('picagens');
+        Route::get('/picagens/data', [PicagensController::class, 'data'])->name('picagens.data');
 
-    Route::post('/password/update', [AuthController::class, 'updatePassword'])->name('password.update');
+        Route::post('/password/update', [AuthController::class, 'updatePassword'])->name('password.update');
 
-    Route::get('/empregados', [UserController::class, 'index'])->name('empregados');
-    Route::post('/empregados', [UserController::class, 'create'])->name('empregados');
-    Route::put('/empregados/{id}', [UserController::class, 'update'])->name('empregados.update');
-    Route::delete('/empregados/{id}', [UserController::class, 'destroy'])->name('empregados.destroy');
+        Route::get('/empregados', [UserController::class, 'index'])->name('empregados');
+        Route::post('/empregados', [UserController::class, 'create'])->name('empregados');
+        Route::put('/empregados/{id}', [UserController::class, 'update'])->name('empregados.update');
+        Route::delete('/empregados/{id}', [UserController::class, 'destroy'])->name('empregados.destroy');
+    });
 });
