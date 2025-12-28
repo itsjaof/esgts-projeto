@@ -44,7 +44,23 @@ class Users extends Model
                                             AND DATE(t2.recorded_at) = CURDATE()
                                     )
 
-                                ) AS pauses
+                                ) AS pauses,
+
+                                -- USERS IN WORK
+                                (
+                                    SELECT COUNT(*)
+                                    FROM time_punches t
+                                    WHERE t.punch_type = 'entrada'
+                                    AND DATE(t.recorded_at) = CURDATE()
+                                    AND NOT EXISTS (
+                                        SELECT 1
+                                        FROM time_punches t2
+                                        WHERE t2.user_id = t.user_id
+                                            AND t2.punch_type IN ('pausa_inicio', 'pausa_fim', 'saida')
+                                            AND DATE(t2.recorded_at) = CURDATE()
+                                    )
+                                    
+                                ) AS worked
                             ");
     }
 

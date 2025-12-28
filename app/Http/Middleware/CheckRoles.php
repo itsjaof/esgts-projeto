@@ -34,6 +34,6 @@ class CheckRoles
              return $next($request);
         }
 
-        abort(403, 'Acesso Negado. Você não tem o papel necessário para esta área.');
+        abort(403, 'Acesso Negado. Você não tem permição para acessar esta área.');
     }
 }

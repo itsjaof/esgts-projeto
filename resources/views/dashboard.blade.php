@@ -31,8 +31,8 @@
         </div>
         <div class="stat-card">
             <div class="stat-info">
-                <h3>Atrasos</h3>
-                <p class="stat-value">8</p>
+                <h3>Em Trabalho</h3>
+                <p class="stat-value">{{$elements->worked}}</p>
             </div>
             <div class="stat-icon">
                 <i class="fas fa-exclamation-triangle"></i>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="map-footer">
                     <i class="fas fa-user-circle"></i>
-                    <span>{{$elements->actives}} empregados ativos</span>
+                    <span>{{$elements->worked}} empregados em trabalho</span>
                 </div>
             </div>
         </div>

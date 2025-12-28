@@ -40,7 +40,7 @@ class GoogleController extends Controller
             ]
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('registo');
     }
 }
 
