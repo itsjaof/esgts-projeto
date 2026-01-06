@@ -91,11 +91,17 @@ class UserController extends Controller
             return redirect()->route('empregados')->with('error', 'Utilizador não encontrado');
         }
 
-        $user->name = $request->input('nome-completo');
-        $user->email = $request->input('email');
-        $user->role = $request->input('type');
+        $user->name     = $request->input('nome-completo');
+        $user->email    = $request->input('email');
         $user->position = $request->input('cargo');
-        $user->status = $request->input('status', 'Inativo');
+        if ($user->position == 'Administrador') {
+            $user->role = 'admin';
+        }elseif ($user->position == 'Gerente') {
+            $user->role = 'manager';
+        }elseif ($user->position == 'Operador') {
+            $user->role = 'employee';
+        }
+        $user->status   = $request->input('status', 'Inativo');
         $user->save();
 
         return redirect()->route('empregados')->with('success', 'Utilizador atualizado com sucesso');

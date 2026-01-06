@@ -11,12 +11,6 @@
         </div>
 
         <div class="action-bar">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Pesquisar Colaborador...">
-                <button class="search-button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
             <button class="btn-primary" id="open-modal-btn">
                 <i class="fas fa-plus"></i> Adicionar Colaborador
             </button>
@@ -152,7 +146,7 @@
                 </div>
 
                 <div class="form-row">
-
+                    <div class="form-group">
                         <label for="edit-cargo">Cargo<span class="required">*</span></label>
                         <select id="edit-cargo" name="cargo" required>
                             <option value="">Selecione o Cargo</option>
@@ -160,8 +154,7 @@
                             <option value="Operador">Operador</option>
                             <option id="admin-option" value="Administrador">Administrador</option>
                         </select>
-
-
+                    </div>
                 </div>
 
                 <div class="form-group">

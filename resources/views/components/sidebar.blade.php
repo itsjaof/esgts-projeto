@@ -4,7 +4,7 @@
     </div>
 
     <nav>
-        @if ((session('user')['role'] == 'admin'))
+        @if ((session('user')['role'] == 'admin') || (session('user')['role'] == 'manager'))
             <a class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
                 <i class="fas fa-home"></i> Dashboard
             </a>
